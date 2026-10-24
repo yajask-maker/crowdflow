@@ -1,0 +1,14 @@
+{
+  "seed": 2026,
+  "days": 28,
+  "rows": 286440,
+  "pathways": 66,
+  "interval_minutes": 5,
+  "horizon_minutes": 5,
+  "synthetic": true,
+  "process": "Poisson arrivals, binomial departures, correlated latent demand and lognormal day variation",
+  "units": "occupancy: persons, arrival_rate: persons/minute, distances: metres, speed: m/s",
+  "schedule": "07:00\u201320:00; class changes 09,10,11,14,15,16; lunch 12:00\u201313:30; weekend multiplier 0.5",
+  "capacity": "comfort threshold 0.35 persons/m\u00b2; physical admission ceiling 2.5 persons/m\u00b2",
+  "observations": "All values synthetic; no campus observations or personal tracking data."
+}

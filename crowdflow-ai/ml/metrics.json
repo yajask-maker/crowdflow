@@ -1,0 +1,1070 @@
+{
+  "data_source": "Synthetic stochastic campus counts; not real observations.",
+  "horizon_minutes": 5,
+  "seed": 2026,
+  "model": "RandomForestRegressor",
+  "split": {
+    "train_days": [
+      0,
+      17
+    ],
+    "validation_days": [
+      18,
+      22
+    ],
+    "test_days": [
+      23,
+      27
+    ],
+    "train_rows": 184140,
+    "validation_rows": 51150,
+    "test_rows": 51150,
+    "purge": "Last row of each pathway-day removed. No label crosses day boundaries."
+  },
+  "selected_parameters": {
+    "n_estimators": 80,
+    "max_depth": 12,
+    "min_samples_leaf": 4,
+    "max_features": 0.85
+  },
+  "tuning_trials": [
+    {
+      "max_depth": 12,
+      "min_samples_leaf": 4,
+      "validation": {
+        "mae": 2.382951394993108,
+        "rmse": 3.275053391350858,
+        "r2": 0.7984656719196148
+      }
+    },
+    {
+      "max_depth": 18,
+      "min_samples_leaf": 4,
+      "validation": {
+        "mae": 2.412441573135737,
+        "rmse": 3.3109379788800424,
+        "r2": 0.7940250747392976
+      }
+    },
+    {
+      "max_depth": null,
+      "min_samples_leaf": 8,
+      "validation": {
+        "mae": 2.4124775170459603,
+        "rmse": 3.3113155144346647,
+        "r2": 0.7939780987514258
+      }
+    }
+  ],
+  "test": {
+    "mae": 2.3350678565510243,
+    "rmse": 3.1762632400730766,
+    "r2": 0.8202305982812723
+  },
+  "baseline": {
+    "mae": 2.8579276637341153,
+    "rmse": 4.014516669042677,
+    "r2": 0.7128232162180301,
+    "name": "Persistence (current occupancy)"
+  },
+  "feature_importance": [
+    {
+      "feature": "occupancy",
+      "importance": 0.7606490094914717
+    },
+    {
+      "feature": "arrival_rate",
+      "importance": 0.0637036510531918
+    },
+    {
+      "feature": "rolling_mean",
+      "importance": 0.0399145557761512
+    },
+    {
+      "feature": "class_change",
+      "importance": 0.023448937041330654
+    },
+    {
+      "feature": "weekday",
+      "importance": 0.0193672325074473
+    },
+    {
+      "feature": "zone",
+      "importance": 0.019323215224060497
+    },
+    {
+      "feature": "capacity",
+      "importance": 0.015839844231641958
+    },
+    {
+      "feature": "time_sin",
+      "importance": 0.012194452779090795
+    },
+    {
+      "feature": "lunch",
+      "importance": 0.01209838435924445
+    },
+    {
+      "feature": "time_cos",
+      "importance": 0.011104975916613828
+    },
+    {
+      "feature": "lag_5",
+      "importance": 0.004886338277852744
+    },
+    {
+      "feature": "lag_10",
+      "importance": 0.004632025765821376
+    },
+    {
+      "feature": "width",
+      "importance": 0.004591930548869675
+    },
+    {
+      "feature": "exam",
+      "importance": 0.0039573769221420765
+    },
+    {
+      "feature": "event",
+      "importance": 0.0024280285489787935
+    },
+    {
+      "feature": "distance",
+      "importance": 0.0018600415560913138
+    }
+  ],
+  "errors": {
+    "mean_error": -0.25184508465721733,
+    "p95_absolute": 6.352654379117447
+  },
+  "versions": {
+    "python": "3.14.7",
+    "sklearn": "1.9.1"
+  },
+  "feature_ranges": {
+    "time_sin": {
+      "min": -1.0,
+      "max": 0.965926
+    },
+    "time_cos": {
+      "min": -1.0,
+      "max": 0.461749
+    },
+    "weekday": {
+      "min": 0.0,
+      "max": 6.0
+    },
+    "class_change": {
+      "min": 0.0,
+      "max": 1.0
+    },
+    "lunch": {
+      "min": 0.0,
+      "max": 1.0
+    },
+    "exam": {
+      "min": 0.0,
+      "max": 1.0
+    },
+    "event": {
+      "min": 0.0,
+      "max": 1.0
+    },
+    "occupancy": {
+      "min": 0.0,
+      "max": 111.0
+    },
+    "lag_5": {
+      "min": 0.0,
+      "max": 111.0
+    },
+    "lag_10": {
+      "min": 0.0,
+      "max": 111.0
+    },
+    "rolling_mean": {
+      "min": 0.0,
+      "max": 106.0
+    },
+    "arrival_rate": {
+      "min": 0.0,
+      "max": 12.4
+    },
+    "distance": {
+      "min": 75.0,
+      "max": 113.36
+    },
+    "width": {
+      "min": 1.2,
+      "max": 4.5
+    },
+    "capacity": {
+      "min": 35.0,
+      "max": 133.0
+    },
+    "zone": {
+      "min": 0.0,
+      "max": 3.0
+    }
+  },
+  "error_histogram": [
+    {
+      "error": -33.207358276287636,
+      "count": 1
+    },
+    {
+      "error": -30.161368387836628,
+      "count": 3
+    },
+    {
+      "error": -27.11537849938562,
+      "count": 2
+    },
+    {
+      "error": -24.06938861093461,
+      "count": 5
+    },
+    {
+      "error": -21.0233987224836,
+      "count": 11
+    },
+    {
+      "error": -17.977408834032587,
+      "count": 30
+    },
+    {
+      "error": -14.93141894558158,
+      "count": 72
+    },
+    {
+      "error": -11.885429057130569,
+      "count": 228
+    },
+    {
+      "error": -8.839439168679558,
+      "count": 883
+    },
+    {
+      "error": -5.793449280228547,
+      "count": 3400
+    },
+    {
+      "error": -2.747459391777536,
+      "count": 12291
+    },
+    {
+      "error": 0.29853049667347165,
+      "count": 22462
+    },
+    {
+      "error": 3.344520385124479,
+      "count": 9926
+    },
+    {
+      "error": 6.39051027357549,
+      "count": 1534
+    },
+    {
+      "error": 9.436500162026501,
+      "count": 239
+    },
+    {
+      "error": 12.482490050477512,
+      "count": 48
+    },
+    {
+      "error": 15.528479938928523,
+      "count": 10
+    },
+    {
+      "error": 18.574469827379534,
+      "count": 2
+    },
+    {
+      "error": 21.620459715830545,
+      "count": 2
+    },
+    {
+      "error": 24.66644960428156,
+      "count": 1
+    }
+  ],
+  "actual_vs_predicted": [
+    {
+      "minute": 420,
+      "actual": 7.0,
+      "predicted": 5.218883899801377
+    },
+    {
+      "minute": 425,
+      "actual": 8.0,
+      "predicted": 8.002125603396202
+    },
+    {
+      "minute": 430,
+      "actual": 9.0,
+      "predicted": 8.360356175542922
+    },
+    {
+      "minute": 435,
+      "actual": 15.0,
+      "predicted": 8.665773726311736
+    },
+    {
+      "minute": 440,
+      "actual": 13.0,
+      "predicted": 11.69472409799142
+    },
+    {
+      "minute": 445,
+      "actual": 9.0,
+      "predicted": 10.596263171522333
+    },
+    {
+      "minute": 450,
+      "actual": 6.0,
+      "predicted": 8.741476723987246
+    },
+    {
+      "minute": 455,
+      "actual": 10.0,
+      "predicted": 7.646166568085084
+    },
+    {
+      "minute": 460,
+      "actual": 10.0,
+      "predicted": 9.270047381772518
+    },
+    {
+      "minute": 465,
+      "actual": 6.0,
+      "predicted": 9.284189922455392
+    },
+    {
+      "minute": 470,
+      "actual": 11.0,
+      "predicted": 7.569952729894605
+    },
+    {
+      "minute": 475,
+      "actual": 11.0,
+      "predicted": 9.674470596045499
+    },
+    {
+      "minute": 480,
+      "actual": 7.0,
+      "predicted": 9.603366369075662
+    },
+    {
+      "minute": 485,
+      "actual": 6.0,
+      "predicted": 7.932868702865592
+    },
+    {
+      "minute": 490,
+      "actual": 6.0,
+      "predicted": 7.593026176598509
+    },
+    {
+      "minute": 495,
+      "actual": 5.0,
+      "predicted": 7.1916489352157145
+    },
+    {
+      "minute": 500,
+      "actual": 2.0,
+      "predicted": 6.853721746753136
+    },
+    {
+      "minute": 505,
+      "actual": 7.0,
+      "predicted": 6.281765035849828
+    },
+    {
+      "minute": 510,
+      "actual": 2.0,
+      "predicted": 7.898508590675559
+    },
+    {
+      "minute": 515,
+      "actual": 8.0,
+      "predicted": 5.27233362261777
+    },
+    {
+      "minute": 520,
+      "actual": 5.0,
+      "predicted": 8.083997559096847
+    },
+    {
+      "minute": 525,
+      "actual": 8.0,
+      "predicted": 6.8630692802094755
+    },
+    {
+      "minute": 530,
+      "actual": 12.0,
+      "predicted": 11.212104670728774
+    },
+    {
+      "minute": 535,
+      "actual": 11.0,
+      "predicted": 11.86108980509533
+    },
+    {
+      "minute": 540,
+      "actual": 12.0,
+      "predicted": 12.209631003399137
+    },
+    {
+      "minute": 545,
+      "actual": 17.0,
+      "predicted": 13.043566987803718
+    },
+    {
+      "minute": 550,
+      "actual": 11.0,
+      "predicted": 15.582917547153974
+    },
+    {
+      "minute": 555,
+      "actual": 6.0,
+      "predicted": 9.884055608932835
+    },
+    {
+      "minute": 560,
+      "actual": 8.0,
+      "predicted": 7.614881272780243
+    },
+    {
+      "minute": 565,
+      "actual": 15.0,
+      "predicted": 8.309629631048292
+    },
+    {
+      "minute": 570,
+      "actual": 14.0,
+      "predicted": 11.486646570251093
+    },
+    {
+      "minute": 575,
+      "actual": 21.0,
+      "predicted": 10.854221478161614
+    },
+    {
+      "minute": 580,
+      "actual": 14.0,
+      "predicted": 13.551081866554977
+    },
+    {
+      "minute": 585,
+      "actual": 13.0,
+      "predicted": 11.186846986532576
+    },
+    {
+      "minute": 590,
+      "actual": 11.0,
+      "predicted": 14.118909918051747
+    },
+    {
+      "minute": 595,
+      "actual": 10.0,
+      "predicted": 12.854600550361534
+    },
+    {
+      "minute": 600,
+      "actual": 17.0,
+      "predicted": 12.432929030320832
+    },
+    {
+      "minute": 605,
+      "actual": 14.0,
+      "predicted": 15.232234113055359
+    },
+    {
+      "minute": 610,
+      "actual": 19.0,
+      "predicted": 13.747579782618903
+    },
+    {
+      "minute": 615,
+      "actual": 13.0,
+      "predicted": 13.063553902361202
+    },
+    {
+      "minute": 620,
+      "actual": 12.0,
+      "predicted": 10.623791857508007
+    },
+    {
+      "minute": 625,
+      "actual": 13.0,
+      "predicted": 10.245632578908502
+    },
+    {
+      "minute": 630,
+      "actual": 13.0,
+      "predicted": 10.553826071761872
+    },
+    {
+      "minute": 635,
+      "actual": 8.0,
+      "predicted": 10.476572006444544
+    },
+    {
+      "minute": 640,
+      "actual": 12.0,
+      "predicted": 8.450884364588713
+    },
+    {
+      "minute": 645,
+      "actual": 11.0,
+      "predicted": 10.029700601776558
+    },
+    {
+      "minute": 650,
+      "actual": 18.0,
+      "predicted": 12.285848944254102
+    },
+    {
+      "minute": 655,
+      "actual": 13.0,
+      "predicted": 15.720574473536251
+    },
+    {
+      "minute": 660,
+      "actual": 11.0,
+      "predicted": 13.945185639298094
+    },
+    {
+      "minute": 665,
+      "actual": 17.0,
+      "predicted": 12.99270540257208
+    },
+    {
+      "minute": 670,
+      "actual": 14.0,
+      "predicted": 15.281490534085979
+    },
+    {
+      "minute": 675,
+      "actual": 11.0,
+      "predicted": 10.656523083169711
+    },
+    {
+      "minute": 680,
+      "actual": 16.0,
+      "predicted": 9.901053689364998
+    },
+    {
+      "minute": 685,
+      "actual": 12.0,
+      "predicted": 11.713034244119616
+    },
+    {
+      "minute": 690,
+      "actual": 5.0,
+      "predicted": 10.047838021751264
+    },
+    {
+      "minute": 695,
+      "actual": 4.0,
+      "predicted": 7.163704553527014
+    },
+    {
+      "minute": 700,
+      "actual": 9.0,
+      "predicted": 6.623586962498318
+    },
+    {
+      "minute": 705,
+      "actual": 13.0,
+      "predicted": 8.381966804311627
+    },
+    {
+      "minute": 710,
+      "actual": 9.0,
+      "predicted": 9.891871540320203
+    },
+    {
+      "minute": 715,
+      "actual": 10.0,
+      "predicted": 8.832672521280363
+    },
+    {
+      "minute": 720,
+      "actual": 19.0,
+      "predicted": 12.982270424865593
+    },
+    {
+      "minute": 725,
+      "actual": 25.0,
+      "predicted": 16.091942759596677
+    },
+    {
+      "minute": 730,
+      "actual": 14.0,
+      "predicted": 23.40733654193426
+    },
+    {
+      "minute": 735,
+      "actual": 18.0,
+      "predicted": 14.875097584709257
+    },
+    {
+      "minute": 740,
+      "actual": 16.0,
+      "predicted": 16.27349921090524
+    },
+    {
+      "minute": 745,
+      "actual": 16.0,
+      "predicted": 14.190668324097794
+    },
+    {
+      "minute": 750,
+      "actual": 12.0,
+      "predicted": 14.216685617930395
+    },
+    {
+      "minute": 755,
+      "actual": 13.0,
+      "predicted": 12.975529458027669
+    },
+    {
+      "minute": 760,
+      "actual": 13.0,
+      "predicted": 12.90516930590221
+    },
+    {
+      "minute": 765,
+      "actual": 14.0,
+      "predicted": 12.814460656740755
+    },
+    {
+      "minute": 770,
+      "actual": 17.0,
+      "predicted": 13.221638580985962
+    },
+    {
+      "minute": 775,
+      "actual": 12.0,
+      "predicted": 14.435310883998216
+    },
+    {
+      "minute": 780,
+      "actual": 12.0,
+      "predicted": 12.603452714050144
+    },
+    {
+      "minute": 785,
+      "actual": 13.0,
+      "predicted": 12.838924688653595
+    },
+    {
+      "minute": 790,
+      "actual": 13.0,
+      "predicted": 12.723194545873602
+    },
+    {
+      "minute": 795,
+      "actual": 13.0,
+      "predicted": 12.84038275599288
+    },
+    {
+      "minute": 800,
+      "actual": 13.0,
+      "predicted": 12.858127371779492
+    },
+    {
+      "minute": 805,
+      "actual": 15.0,
+      "predicted": 12.728143379046582
+    },
+    {
+      "minute": 810,
+      "actual": 11.0,
+      "predicted": 11.569873786970925
+    },
+    {
+      "minute": 815,
+      "actual": 7.0,
+      "predicted": 9.871568023183958
+    },
+    {
+      "minute": 820,
+      "actual": 8.0,
+      "predicted": 7.8014662271668955
+    },
+    {
+      "minute": 825,
+      "actual": 9.0,
+      "predicted": 8.3927925920835
+    },
+    {
+      "minute": 830,
+      "actual": 10.0,
+      "predicted": 11.59227726384889
+    },
+    {
+      "minute": 835,
+      "actual": 12.0,
+      "predicted": 11.373739375971684
+    },
+    {
+      "minute": 840,
+      "actual": 15.0,
+      "predicted": 12.385708529309124
+    },
+    {
+      "minute": 845,
+      "actual": 17.0,
+      "predicted": 14.456802375566895
+    },
+    {
+      "minute": 850,
+      "actual": 18.0,
+      "predicted": 15.53784118636123
+    },
+    {
+      "minute": 855,
+      "actual": 8.0,
+      "predicted": 12.623023648505782
+    },
+    {
+      "minute": 860,
+      "actual": 12.0,
+      "predicted": 8.654293492930464
+    },
+    {
+      "minute": 865,
+      "actual": 12.0,
+      "predicted": 10.068501899273272
+    },
+    {
+      "minute": 870,
+      "actual": 14.0,
+      "predicted": 9.973082499426189
+    },
+    {
+      "minute": 875,
+      "actual": 16.0,
+      "predicted": 10.93735482847047
+    },
+    {
+      "minute": 880,
+      "actual": 15.0,
+      "predicted": 11.665408218261996
+    },
+    {
+      "minute": 885,
+      "actual": 14.0,
+      "predicted": 11.821672397782091
+    },
+    {
+      "minute": 890,
+      "actual": 17.0,
+      "predicted": 13.962499094805503
+    },
+    {
+      "minute": 895,
+      "actual": 14.0,
+      "predicted": 15.372996225035427
+    },
+    {
+      "minute": 900,
+      "actual": 17.0,
+      "predicted": 13.666943314129526
+    },
+    {
+      "minute": 905,
+      "actual": 22.0,
+      "predicted": 15.542611280083824
+    },
+    {
+      "minute": 910,
+      "actual": 16.0,
+      "predicted": 18.504998425122196
+    },
+    {
+      "minute": 915,
+      "actual": 9.0,
+      "predicted": 12.089819196046566
+    },
+    {
+      "minute": 920,
+      "actual": 11.0,
+      "predicted": 8.796306099789174
+    },
+    {
+      "minute": 925,
+      "actual": 11.0,
+      "predicted": 9.81073554520857
+    },
+    {
+      "minute": 930,
+      "actual": 8.0,
+      "predicted": 9.760095818738385
+    },
+    {
+      "minute": 935,
+      "actual": 11.0,
+      "predicted": 8.477352468934297
+    },
+    {
+      "minute": 940,
+      "actual": 10.0,
+      "predicted": 9.724791375367074
+    },
+    {
+      "minute": 945,
+      "actual": 10.0,
+      "predicted": 9.26301368230642
+    },
+    {
+      "minute": 950,
+      "actual": 15.0,
+      "predicted": 12.089973292353728
+    },
+    {
+      "minute": 955,
+      "actual": 11.0,
+      "predicted": 14.017959244609534
+    },
+    {
+      "minute": 960,
+      "actual": 7.0,
+      "predicted": 11.759910802941219
+    },
+    {
+      "minute": 965,
+      "actual": 10.0,
+      "predicted": 10.422511660425641
+    },
+    {
+      "minute": 970,
+      "actual": 12.0,
+      "predicted": 11.367386193641988
+    },
+    {
+      "minute": 975,
+      "actual": 8.0,
+      "predicted": 9.938847783018188
+    },
+    {
+      "minute": 980,
+      "actual": 8.0,
+      "predicted": 8.490284584687654
+    },
+    {
+      "minute": 985,
+      "actual": 9.0,
+      "predicted": 8.501349105586984
+    },
+    {
+      "minute": 990,
+      "actual": 5.0,
+      "predicted": 8.726307825015425
+    },
+    {
+      "minute": 995,
+      "actual": 6.0,
+      "predicted": 7.045579390976938
+    },
+    {
+      "minute": 1000,
+      "actual": 3.0,
+      "predicted": 7.227164655578555
+    },
+    {
+      "minute": 1005,
+      "actual": 3.0,
+      "predicted": 6.352840768523263
+    },
+    {
+      "minute": 1010,
+      "actual": 7.0,
+      "predicted": 6.2912565032208905
+    },
+    {
+      "minute": 1015,
+      "actual": 3.0,
+      "predicted": 7.805207880838424
+    },
+    {
+      "minute": 1020,
+      "actual": 7.0,
+      "predicted": 6.318340243977959
+    },
+    {
+      "minute": 1025,
+      "actual": 15.0,
+      "predicted": 7.837555693253449
+    },
+    {
+      "minute": 1030,
+      "actual": 13.0,
+      "predicted": 11.031571184254457
+    },
+    {
+      "minute": 1035,
+      "actual": 6.0,
+      "predicted": 10.431548082790897
+    },
+    {
+      "minute": 1040,
+      "actual": 5.0,
+      "predicted": 7.650758668168566
+    },
+    {
+      "minute": 1045,
+      "actual": 9.0,
+      "predicted": 7.085973552617024
+    },
+    {
+      "minute": 1050,
+      "actual": 4.0,
+      "predicted": 8.59219620934201
+    },
+    {
+      "minute": 1055,
+      "actual": 9.0,
+      "predicted": 6.474309655892283
+    },
+    {
+      "minute": 1060,
+      "actual": 7.0,
+      "predicted": 8.52369655132495
+    },
+    {
+      "minute": 1065,
+      "actual": 8.0,
+      "predicted": 7.820521980784894
+    },
+    {
+      "minute": 1070,
+      "actual": 12.0,
+      "predicted": 8.397585159259183
+    },
+    {
+      "minute": 1075,
+      "actual": 12.0,
+      "predicted": 9.92019218608466
+    },
+    {
+      "minute": 1080,
+      "actual": 7.0,
+      "predicted": 10.09412448908951
+    },
+    {
+      "minute": 1085,
+      "actual": 8.0,
+      "predicted": 7.9372930350491915
+    },
+    {
+      "minute": 1090,
+      "actual": 7.0,
+      "predicted": 8.549924173564275
+    },
+    {
+      "minute": 1095,
+      "actual": 4.0,
+      "predicted": 7.853154902791087
+    },
+    {
+      "minute": 1100,
+      "actual": 8.0,
+      "predicted": 6.411168244927476
+    },
+    {
+      "minute": 1105,
+      "actual": 9.0,
+      "predicted": 8.187549005341637
+    },
+    {
+      "minute": 1110,
+      "actual": 5.0,
+      "predicted": 8.66034471385177
+    },
+    {
+      "minute": 1115,
+      "actual": 10.0,
+      "predicted": 7.045083966368907
+    },
+    {
+      "minute": 1120,
+      "actual": 8.0,
+      "predicted": 9.142274827117415
+    },
+    {
+      "minute": 1125,
+      "actual": 10.0,
+      "predicted": 8.332225196229293
+    },
+    {
+      "minute": 1130,
+      "actual": 13.0,
+      "predicted": 9.246734629995464
+    },
+    {
+      "minute": 1135,
+      "actual": 12.0,
+      "predicted": 10.505019598494082
+    },
+    {
+      "minute": 1140,
+      "actual": 8.0,
+      "predicted": 10.235572038057015
+    },
+    {
+      "minute": 1145,
+      "actual": 6.0,
+      "predicted": 8.683837304391519
+    },
+    {
+      "minute": 1150,
+      "actual": 7.0,
+      "predicted": 7.606831907496135
+    },
+    {
+      "minute": 1155,
+      "actual": 3.0,
+      "predicted": 7.847407574854076
+    },
+    {
+      "minute": 1160,
+      "actual": 9.0,
+      "predicted": 6.5419062863453705
+    },
+    {
+      "minute": 1165,
+      "actual": 7.0,
+      "predicted": 8.348378275829575
+    },
+    {
+      "minute": 1170,
+      "actual": 6.0,
+      "predicted": 7.746366193796558
+    },
+    {
+      "minute": 1175,
+      "actual": 8.0,
+      "predicted": 7.470309018941255
+    },
+    {
+      "minute": 1180,
+      "actual": 9.0,
+      "predicted": 8.32674381421774
+    },
+    {
+      "minute": 1185,
+      "actual": 11.0,
+      "predicted": 8.758653610337632
+    },
+    {
+      "minute": 1190,
+      "actual": 10.0,
+      "predicted": 9.641417534750122
+    }
+  ],
+  "plot_pathway": "P024"
+}

@@ -1,0 +1,13 @@
+{
+  "python_tests": 31,
+  "react_real_api_tests": 6,
+  "production_bundle_dom": "passed",
+  "http_restart": "passed",
+  "frontend_build": "passed",
+  "full_browser_visual_qa": "not performed; supported browser QA surface unavailable",
+  "python": "3.12.14",
+  "sklearn": "1.8.0",
+  "synthetic": true,
+  "fresh_environment_install_and_launch": "passed",
+  "fresh_environment_python_tests": 31
+}
